@@ -1,0 +1,12 @@
+[user]
+	name = myuser
+	email = myuser@localhost
+[color]
+	status = auto
+	diff = auto
+	branch = auto
+	grep = auto
+[core]
+	excludesfile = ~/.gitignore
+[grep]
+	lineNumber = true
