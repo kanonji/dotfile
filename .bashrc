@@ -2,6 +2,7 @@ export PATH=~/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 alias ls='ls -G' #Mac
 # alias ls='ls --color --show-control-chars' #Linux
+export IGNOREEOF=3
 
 # history
 export HISTSIZE=5000
