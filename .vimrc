@@ -67,5 +67,12 @@ function! Getff()
     endif
 endfunction
 
+"{pathogen}
 filetype plugin on
 filetype indent on
+
+"{neocomplcache}
+
+"{quickrun}
+
+"{syntastic}
