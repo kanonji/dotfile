@@ -23,14 +23,21 @@ set expandtab "タブの代わりに空白文字挿入
 " http://d.hatena.ne.jp/yuroyoro/20101104/1288879591
 " カーソル行をハイライト
 set cursorline
+set cursorcolumn
 " カレントウィンドウにのみ罫線を引く
 augroup cch
   autocmd! cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
+  autocmd WinLeave * set cursorcolumn
+  autocmd WinEnter,BufRead * set cursorcolumn
 augroup END
 
-:hi CursorLine gui=underline
+highlight clear CursorLine
+highlight clear cursorcolumn
+" 何故かMacでctermbg=darkgrayが利かないので、反転で代用
+highlight CursorLine term=reverse cterm=reverse ctermbg=NONE gui=underline guibg=NONE
+highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE guibg=black
 
 "Escの2回押しでハイライト消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
