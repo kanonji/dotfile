@@ -33,7 +33,7 @@ augroup END
 :hi CursorLine gui=underline
 
 "Escの2回押しでハイライト消去
-nmap <ESC><ESC> ;nohlsearch<CR><ESC>
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 set directory=~/.vim/tmp "swpファイルの作成ディレクトリを指定
 set backupdir=~/.vim/tmp "~バックアップファイルの作成ディレクトリを指定
