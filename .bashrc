@@ -1,5 +1,8 @@
 export PATH=~/bin:$PATH
 export GREP_OPTIONS='--color=auto'
+alias dvim='/usr/bin/vi'
+#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias ls='ls -G' #Mac
 # alias ls='ls --color --show-control-chars' #Linux
 export IGNOREEOF=3
