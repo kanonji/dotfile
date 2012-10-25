@@ -40,6 +40,7 @@ highlight CursorLine term=reverse cterm=reverse ctermbg=NONE gui=underline guibg
 highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE guibg=black
 
 "Escの2回押しでハイライト消去
+set hlsearch
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 set directory=~/.vim/tmp "swpファイルの作成ディレクトリを指定
