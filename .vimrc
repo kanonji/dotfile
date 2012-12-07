@@ -75,8 +75,9 @@ function! Getff()
     endif
 endfunction
 
+filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
 "{pathogen}
-filetype plugin on
+filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
 filetype indent on
 
 "{neocomplcache}
