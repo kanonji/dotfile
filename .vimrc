@@ -75,6 +75,9 @@ function! Getff()
     endif
 endfunction
 
+" CLI向けにANSI colorを調節
+highlight Error term=reverse ctermfg=Black ctermbg=Red
+
 filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
 "{pathogen}
 filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
