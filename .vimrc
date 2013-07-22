@@ -77,6 +77,7 @@ endfunction
 
 " CLI向けにANSI colorを調節
 highlight Error term=reverse ctermfg=Black ctermbg=Red
+highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
 filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
 "{pathogen}
