@@ -1,5 +1,7 @@
 " vim:set ts=4 sts=4 sw=4 tw=0 et
 
+set helplang=ja "helpを日本語優先にする
+
 " UI
 set number "行番号表示
 set showmode "モード表示
@@ -9,6 +11,16 @@ set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 syntax on "カラー表示
+set scrolloff=10 "カーソルの上または下に表示する最小限の行数
+" 特定のキーに行頭および行末の回りこみ移動を許可する設定
+"  b - [Backspace]  ノーマルモード ビジュアルモード
+"  s - [Space]      ノーマルモード ビジュアルモード
+"  <  - [←]        ノーマルモード ビジュアルモード
+"  >  - [→]         ノーマルモード ビジュアルモード
+"  [ - [←]         挿入モード 置換モード
+"  ] - [→]          挿入モード 置換モード
+"  ~ - ~            ノーマルモード
+set whichwrap=b,s,<,>,[,],~
 
 " Input
 set smartindent "オートインデント
