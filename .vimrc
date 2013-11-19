@@ -97,7 +97,7 @@ filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
 filetype indent on
 
 " neocomplcache
-if(glob('~/.vim/bundle/neocomplcache/'))
+if('' != glob('~/.vim/bundle/neocomplcache/'))
     let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
     "let g:neocomplcache_enable_auto_select = 1 " 1番目の候補を自動選択
     " 候補表示時はEnterで確定。それ以外は改行
@@ -110,13 +110,13 @@ if(glob('~/.vim/bundle/neocomplcache/'))
 endif
 
 " quickrun
-if(glob('~/.vim/bundle/vim-quickru/'))
+if('' != glob('~/.vim/bundle/vim-quickru/'))
     let g:quickrun_config = {}
     " let g:quickrun_config['php'] = {'outputter': 'browser'}
 endif
 
 " tcomment
-if(glob('~/.vim/bundle/tcomment_vim/'))
+if('' != glob('~/.vim/bundle/tcomment_vim/'))
     if !exists('g:tcomment_types')
         let g:tcomment_types = {}
     endif
