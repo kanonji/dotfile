@@ -96,8 +96,36 @@ filetype off "pathogenでftdetectなどをロードさせるために一度フ�
 filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
 filetype indent on
 
-"{neocomplcache}
+" neocomplcache
+if(glob('~/.vim/bundle/neocomplcache/'))
+    let g:neocomplcache_enable_at_startup = 1 " 起動時に有効化
+    "let g:neocomplcache_enable_auto_select = 1 " 1番目の候補を自動選択
+    " 候補表示時はEnterで確定。それ以外は改行
+    inoremap <expr><CR>    pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+    " Tabで次の候補
+    inoremap <expr><TAB>   pumvisible() ? "\<C-n>" : "\<TAB>"
+    " Shift tabで前の候補
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+    highlight Pmenu ctermbg=Black
+endif
 
-"{quickrun}
+" quickrun
+if(glob('~/.vim/bundle/vim-quickru/'))
+    let g:quickrun_config = {}
+    " let g:quickrun_config['php'] = {'outputter': 'browser'}
+endif
 
-"{syntastic}
+" tcomment
+if(glob('~/.vim/bundle/tcomment_vim/'))
+    if !exists('g:tcomment_types')
+        let g:tcomment_types = {}
+    endif
+    let g:tcomment_types = {
+        \'phptag_inline' : "<?php %s ?>",
+        \'phptag_echo_inline' : "<?php echo %s ?>",
+    \}
+    au FileType php nmap <buffer><C-_>j :TCommentAs phptag_inline<CR>
+    au FileType php vmap <buffer><C-_>j :TCommentAs phptag_inline<CR>
+    au FileType php nmap <buffer><C-_>k :TCommentAs phptag_echo_inline<CR>
+    au FileType php vmap <buffer><C-_>k :TCommentAs phptag_echo_inline<CR>
+endif
