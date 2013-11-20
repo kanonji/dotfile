@@ -93,6 +93,10 @@ highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
 filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
 "{pathogen}
+if('' != glob('~/.vim/bundle/vim-pathogen/'))
+    call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
+endif
 filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
 filetype indent on
 
