@@ -12,5 +12,7 @@
 	lineNumber = true
 [push]
 	default = simple
+[include]
+	path = ~/.gitconfig_env
 
 # vim: set ts=4 sw=4 sts=0 noet ff=unix :
