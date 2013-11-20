@@ -21,6 +21,8 @@ set scrolloff=10 "カーソルの上または下に表示する最小限の行�
 "  ] - [→]          挿入モード 置換モード
 "  ~ - ~            ノーマルモード
 set whichwrap=b,s,<,>,[,],~
+set list
+set listchars=tab:▸\ ,trail:¬
 
 " Input
 set smartindent "オートインデント
@@ -50,6 +52,8 @@ highlight clear cursorcolumn
 " 何故かMacでctermbg=darkgrayが利かないので、反転で代用
 highlight CursorLine term=reverse cterm=reverse ctermbg=NONE gui=underline guibg=NONE
 highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE guibg=black
+highlight SpecialKey term=underline ctermfg=darkgray guifg=darkgray
+highlight NonText term=underline ctermfg=darkgray guifg=darkgray
 
 "Escの2回押しでハイライト消去
 set hlsearch
