@@ -91,9 +91,9 @@ endfunction
 highlight Error term=reverse ctermfg=Black ctermbg=Red
 highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
-filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
-"{pathogen}
+" pathogen
 if('' != glob('~/.vim/bundle/vim-pathogen/'))
+    filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
     call pathogen#runtime_append_all_bundles()
     call pathogen#helptags()
 endif
