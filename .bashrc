@@ -12,9 +12,20 @@ export HISTSIZE=5000
 export HISTFILESIZE=5000
 export HISTIGNORE=ls:pwd
 
-# /etc/bash_completion.d/git
-if [ -f $BASH_COMPLETION_DIR/git ]; then
-    export PS1='\[\033[01;32m\]\u@\h\[\033[01;33m\] \w$(__git_ps1) \n\[\033[01;34m\]\$\[\033[00m\] '
+# PS1 with git
+function switch_emo {
+    if [ $? -eq 0 ]; then
+        emo="\033[00;31m(｀・ω・´)っ\033[00m"
+    else
+        emo="\033[01;30;41m( ´・ω・\`)っ\033[00m"
+    fi
+    echo -e "${emo}"
+}
+if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
+    . /opt/local/share/git-core/git-prompt.sh
+fi
+if type __git_ps1 > /dev/null 2>&1; then
+    export PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) \n\$(switch_emo)\j \[\033[01;34m\]\$\[\033[00m\] "
 else
-    export PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+    export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$(switch_emo)\j \$ "
 fi
