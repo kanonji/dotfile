@@ -24,10 +24,21 @@ function switch_emo() {
     fi
     echo -e "${emo}"
 }
+function __git_status_k(){
+    local g="$(__gitdir)";
+    if [ -n "$g" ]; then
+        local status=$(git status --porcelain 2>/dev/null)
+        local staged=$(echo "$status" | grep "^M" | wc -l | tr -d ' ')
+        local new=$(echo "$status" | grep "^A" | wc -l | tr -d ' ')
+        local modified=$(echo "$status" | grep "^ M" | wc -l | tr -d ' ')
+        local untracked=$(echo "$status" | grep "^??" | wc -l | tr -d ' ')
+        echo -e "\033[0;32mStaged: \033[00m${staged}, \033[0;32mNew file: \033[00m${new}, \033[0;31mModified: \033[00m${modified}, \033[0;31mUntracked: \033[00m${untracked}"
+    fi
+}
 function _prompt_command(){
     emo="$(switch_emo)"
     if type __git_ps1 > /dev/null 2>&1; then
-        PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) \n${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
+        PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) \$(__git_status_k)\n${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
     else
         PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
     fi
