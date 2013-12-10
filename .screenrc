@@ -1,4 +1,4 @@
-escape ^q^q
+escape ^t^t
 caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
 defscrollback 10000
 bind w windowlist -b
