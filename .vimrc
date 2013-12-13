@@ -27,6 +27,7 @@ set listchars=tab:▸\ ,trail:¬
 " Input
 set smartindent "オートインデント
 set clipboard=unnamed "yyの結果をクリップボードに。多分vimバイナリ次第で動かないかも
+noremap 0p "0p "コピーレジスタからペースト
 
 " Tab
 set tabstop=4 "タブを表示する際の幅
