@@ -97,6 +97,9 @@ endfunction
 highlight Error term=reverse ctermfg=Black ctermbg=Red
 highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
+" ファイルタイプ判別
+au BufNewFile,BufRead *.json setf json
+
 " pathogen
 if('' != glob('~/.vim/bundle/vim-pathogen/'))
     filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
