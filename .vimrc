@@ -99,6 +99,7 @@ highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
 " ファイルタイプ判別
 au BufNewFile,BufRead *.json setf json
+au BufNewFile,BufRead *.mustache setf html
 
 " pathogen
 if('' != glob('~/.vim/bundle/vim-pathogen/'))
