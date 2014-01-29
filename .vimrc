@@ -11,7 +11,7 @@ set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 syntax on "カラー表示
-set scrolloff=10 "カーソルの上または下に表示する最小限の行数
+set scrolloff=5 "カーソルの上または下に表示する最小限の行数
 " 特定のキーに行頭および行末の回りこみ移動を許可する設定
 "  b - [Backspace]  ノーマルモード ビジュアルモード
 "  s - [Space]      ノーマルモード ビジュアルモード
