@@ -97,6 +97,20 @@ endfunction
 highlight Error term=reverse ctermfg=Black ctermbg=Red
 highlight Search term=reverse ctermfg=Black ctermbg=LightYellow
 
+" プロジェクト毎に読み込む設定ファイル
+" http://d.hatena.ne.jp/hokaccha/20110702/1309582063
+function! s:vimrc_project(loc)
+    let files = findfile('.vimrc.project', escape(a:loc, ' ') . ';', -1)
+    for i in reverse(filter(files, 'filereadable(v:val)'))
+        source `=i`
+    endfor
+endfunction
+
+augroup vimrc-project
+    autocmd!
+    autocmd BufNewFile,BufReadPost * call s:vimrc_project(expand('<afile>:p:h'))
+augroup END
+
 " ファイルタイプ判別
 au BufNewFile,BufRead *.json setf json
 au BufNewFile,BufRead *.mustache setf html
