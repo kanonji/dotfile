@@ -157,3 +157,44 @@ if('' != glob('~/.vim/bundle/tcomment_vim/'))
     au FileType php nmap <buffer><C-_>k :TCommentAs phptag_echo_inline<CR>
     au FileType php vmap <buffer><C-_>k :TCommentAs phptag_echo_inline<CR>
 endif
+
+" emmet.vim
+if('' != glob('~/.vim/bundle/emmet-vim/'))
+    let g:user_emmet_settings = {
+\        'html': {
+\            'snippets': {
+\                'myhtml': "<!DOCTYPE html>\n"
+\                          ."<html class=\"no-js\" lang=\"${lang}\">\n"
+\                          ."    <head>\n"
+\                          ."        <meta charset=\"${charset}\">\n"
+\                          ."        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge, chrome=1\">\n"
+\                          ."        <title></title>\n"
+\                          ."        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
+\                          ."\n"
+\                          ."        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->\n"
+\                          ."\n"
+\                          ."        <link rel=\"stylesheet\" href=\"css/main.css\">\n"
+\                          ."        <script src=\"//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js\"></script>\n"
+\                          ."    </head>\n"
+\                          ."    <body>\n"
+\                          ."        <!--[if lt IE 8]>\n"
+\                          ."            <p class=\"browsehappy\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.</p>\n"
+\                          ."        <![endif]-->\n"
+\                          ."\n"
+\                          ."\n"
+\                          ."\n"
+\                          ."        <script src=\"//code.jquery.com/jquery-2.1.0.min.js\"></script>\n"
+\                          ."        <script src=\"js/main.js\"></script>\n"
+\                          ."    </body>\n"
+\                          ."</html>\n",
+\                'jquerycdn': "<script src=\"//code.jquery.com/jquery-2.1.0.min.js\"></script>\n",
+\                'bootstrapjscdn': "<script src=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js\"></script>\n",
+\                'bootstrapcsscdn': "<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css\">\n",
+\                'fontawesomecdn': "<link rel=\"stylesheet\" href=\"//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css\">\n",
+\                'btjscdn': "bootstrapjscdn",
+\                'btcsscdn': "bootstrapcsscdn",
+\                'facdn': "fontawesomecdn",
+\            }
+\        }
+\    }
+endif
