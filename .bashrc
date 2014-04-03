@@ -13,8 +13,13 @@ export HISTFILESIZE=5000
 export HISTIGNORE=ls:pwd
 
 # PS1 with git
+## MacPorts
 if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
     . /opt/local/share/git-core/git-prompt.sh
+fi
+## homebrew
+if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+    . /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 function switch_emo() {
     if [ $? -eq 0 ]; then
