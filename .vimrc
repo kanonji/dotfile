@@ -118,7 +118,7 @@ au BufNewFile,BufRead *.mustache setf html
 " pathogen
 if('' != glob('~/.vim/bundle/vim-pathogen/'))
     filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
-    call pathogen#runtime_append_all_bundles()
+    call pathogen#infect()
     call pathogen#helptags()
 endif
 filetype plugin on "filetype plugin on が filetype on も暗黙的にやる
