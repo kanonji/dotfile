@@ -12,6 +12,16 @@ export HISTSIZE=5000
 export HISTFILESIZE=5000
 export HISTIGNORE=ls:pwd
 
+# bash-completion
+## MacPorts
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+## homebrew
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+    . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 # PS1 with git
 ## MacPorts
 if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
