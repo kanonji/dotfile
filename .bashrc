@@ -14,9 +14,15 @@ function this_os_is(){
 }
 export PATH=~/bin:$PATH
 export GREP_OPTIONS='--color=auto'
+
+# Vim
 alias dvim='/usr/bin/vi'
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+if this_os_is mac; then
+    if [ -x '/Applications/MacVim.app/Contents/MacOS/Vim' ]; then
+        alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+        alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    fi
+fi
 
 if this_os_is mac; then
     alias ls='ls -G'
