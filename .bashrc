@@ -17,8 +17,14 @@ export GREP_OPTIONS='--color=auto'
 alias dvim='/usr/bin/vi'
 #alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 #alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-alias ls='ls -G' #Mac
-# alias ls='ls --color --show-control-chars' #Linux
+
+if this_os_is mac; then
+    alias ls='ls -G'
+fi
+if this_os_is linux; then
+    alias ls='ls --color --show-control-chars'
+fi
+
 export IGNOREEOF=3
 
 # history
@@ -27,23 +33,27 @@ export HISTFILESIZE=5000
 export HISTIGNORE=ls:pwd
 
 # bash-completion
-## MacPorts
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-fi
-## homebrew
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-    . /usr/local/etc/bash_completion.d/git-completion.bash
+if this_os_is mac; then
+    ## MacPorts
+    if [ -f /opt/local/etc/bash_completion ]; then
+        . /opt/local/etc/bash_completion
+    fi
+    ## homebrew
+    if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+        . /usr/local/etc/bash_completion.d/git-completion.bash
+    fi
 fi
 
 # PS1 with git
-## MacPorts
-if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
-    . /opt/local/share/git-core/git-prompt.sh
-fi
-## homebrew
-if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
-    . /usr/local/etc/bash_completion.d/git-prompt.sh
+if this_os_is mac; then
+    ## MacPorts
+    if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
+        . /opt/local/share/git-core/git-prompt.sh
+    fi
+    ## homebrew
+    if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+        . /usr/local/etc/bash_completion.d/git-prompt.sh
+    fi
 fi
 function switch_emo() {
     if [ $? -eq 0 ]; then
