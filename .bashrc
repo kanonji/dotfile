@@ -1,3 +1,17 @@
+function this_os_is(){
+    case "${OSTYPE}" in
+        linux*)
+            OS="linux"
+            ;;
+        darwin*)
+            OS="mac"
+            ;;
+    esac
+    if [ "${OS}" = "$1" ]; then
+        return 0
+    fi
+    return 1
+}
 export PATH=~/bin:$PATH
 export GREP_OPTIONS='--color=auto'
 alias dvim='/usr/bin/vi'
