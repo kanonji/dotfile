@@ -115,6 +115,13 @@ augroup END
 au BufNewFile,BufRead *.json setf json
 au BufNewFile,BufRead *.mustache setf html
 
+" カーソル位置の単語をヤンクした単語に置換
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/tips#TOC--8
+nnoremap <silent> ciy ciw<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap <silent> cy   ce<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+vnoremap <silent> cy   c<C-r>0<ESC>:let@/=@1<CR>:noh<CR>
+nnoremap gp "0P
+
 " pathogen
 if('' != glob('~/.vim/bundle/vim-pathogen/'))
     filetype off "pathogenでftdetectなどをロードさせるために一度ファイルタイプ判定をoffにする
@@ -198,3 +205,4 @@ if('' != glob('~/.vim/bundle/emmet-vim/'))
 \        }
 \    }
 endif
+
