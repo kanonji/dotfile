@@ -25,6 +25,7 @@ if this_os_is linux; then
     alias ls='ls --color --show-control-chars'
 fi
 
+# logout with ^D^D^D
 export IGNOREEOF=3
 
 # history
