@@ -46,8 +46,8 @@ if this_os_is mac; then
         . /opt/local/etc/bash_completion
     fi
     ## homebrew
-    if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-        . /usr/local/etc/bash_completion.d/git-completion.bash
+    if [ -f /usr/local/etc/bash_completion ]; then
+        . /usr/local/etc/bash_completion
     fi
 fi
 
