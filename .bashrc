@@ -91,3 +91,8 @@ function _prompt_command(){
     fi
 }
 PROMPT_COMMAND=_prompt_command
+
+# rbenv
+if type rbenv > /dev/null 2>&1 ; then
+    eval "$(rbenv init -)"
+fi
