@@ -96,3 +96,10 @@ PROMPT_COMMAND=_prompt_command
 if type rbenv > /dev/null 2>&1 ; then
     eval "$(rbenv init -)"
 fi
+
+# nvm
+if this_os_is mac; then
+    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+        source $(brew --prefix nvm)/nvm.sh
+    fi
+fi
