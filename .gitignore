@@ -11,3 +11,6 @@ build/*
 
 #Windows
 Thumbs.db
+
+#Bundler
+.bundle
