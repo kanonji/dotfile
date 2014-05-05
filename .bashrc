@@ -110,3 +110,6 @@ if this_os_is mac; then
         export PATH=$HOME/.php-nabe/php-nabe/bin:$PATH
     fi
 fi
+
+# pythonz
+[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
