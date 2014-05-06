@@ -122,4 +122,5 @@ if [ -s `which virtualenvwrapper.sh` ]; then
     export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
 
     workon default3
+    alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
 fi
