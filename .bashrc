@@ -62,6 +62,14 @@ if this_os_is mac; then
         . /usr/local/etc/bash_completion.d/git-prompt.sh
     fi
 fi
+function switch_virtualenv() {
+    if [[ $VIRTUAL_ENV != "" ]]; then
+        venv="Py:${VIRTUAL_ENV##*/}"
+    else
+        venv=''
+    fi
+    echo -e "${venv}"
+}
 function switch_emo() {
     if [ $? -eq 0 ]; then
         emo="\[\033[00;31m\](｀・ω・´)っ\[\033[00m\]"
@@ -83,9 +91,10 @@ function __git_status_k(){
 }
 function _prompt_command(){
     emo="$(switch_emo)"
+    venv="$(switch_virtualenv)"
     if type __git_ps1 > /dev/null 2>&1; then
         git_status_k="$(__git_status_k)"
-        PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) ${git_status_k}\n${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
+        PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) ${git_status_k}\n${venv} ${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
     else
         PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
     fi
