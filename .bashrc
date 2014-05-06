@@ -120,4 +120,6 @@ if [ -s `which virtualenvwrapper.sh` ]; then
     eval "`pip completion --bash`"
     # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
     export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
+
+    workon default3
 fi
