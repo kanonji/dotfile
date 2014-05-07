@@ -12,7 +12,7 @@ function this_os_is(){
     fi
     return 1
 }
-export PATH=./vendor/bin:~/bin:$PATH
+export PATH=./vendor/bin:~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export GREP_OPTIONS='--color=auto'
 
 # Vim
