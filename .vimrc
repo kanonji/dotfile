@@ -206,3 +206,7 @@ if('' != glob('~/.vim/bundle/emmet-vim/'))
 \    }
 endif
 
+" tagbar
+if('' != glob('~/.vim/bundle/tagbar/'))
+    nmap <F8> :TagbarToggle<CR>
+endif
