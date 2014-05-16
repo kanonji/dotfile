@@ -108,8 +108,10 @@ fi
 
 # nvm
 if this_os_is mac; then
-    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
-        source $(brew --prefix nvm)/nvm.sh
+    if type type brew > /dev/null 2>&1 ; then
+        if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+            source $(brew --prefix nvm)/nvm.sh
+        fi
     fi
 fi
 
