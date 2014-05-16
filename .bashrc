@@ -123,15 +123,17 @@ if this_os_is mac; then
 fi
 
 # pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-if [ -s `which virtualenvwrapper.sh` ]; then
-    source `which virtualenvwrapper.sh`
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/dev/virtualenv
-    eval "`pip completion --bash`"
-    # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
-    export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
+if type pythonz > /dev/null 2>&1 ; then
+    [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+    if [ -s `which virtualenvwrapper.sh` ]; then
+        source `which virtualenvwrapper.sh`
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PROJECT_HOME=$HOME/dev/virtualenv
+        eval "`pip completion --bash`"
+        # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
+        export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
 
-    workon default3
-    alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
+        workon default3
+        alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
+    fi
 fi
