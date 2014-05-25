@@ -123,8 +123,8 @@ if this_os_is mac; then
 fi
 
 # pythonz
-if type pythonz > /dev/null 2>&1 ; then
-    [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+if [ -s $HOME/.pythonz/etc/bashrc ]; then
+    source $HOME/.pythonz/etc/bashrc
     if [ -s `which virtualenvwrapper.sh` ]; then
         source `which virtualenvwrapper.sh`
         export WORKON_HOME=$HOME/.virtualenvs
