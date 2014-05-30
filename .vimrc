@@ -221,3 +221,12 @@ if('' != glob('~/.vim/bundle/tagbar/'))
         \ 'j:javascript functions:1'
     \ ] }
 endif
+
+" syntastic
+if('' != glob('~/.vim/bundle/syntastic/'))
+    let g:syntastic_error_symbol = '✗'
+    let g:syntastic_warning_symbol = '⚠'
+    let g:syntastic_style_error_symbol = '⚠'
+    let g:syntastic_style_warning_symbol = '⚠'
+    let g:syntastic_scss_checkers = ['scss_lint']
+endif
