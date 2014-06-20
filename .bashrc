@@ -138,3 +138,8 @@ if [ -s $HOME/.pythonz/etc/bashrc ]; then
         alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
     fi
 fi
+
+# direnv
+if type type direnv > /dev/null 2>&1 ; then
+    eval "$(direnv hook $0)"
+fi
