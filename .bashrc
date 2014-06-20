@@ -111,6 +111,7 @@ if this_os_is mac; then
     if type type brew > /dev/null 2>&1 ; then
         if [ -f $(brew --prefix nvm)/nvm.sh ]; then
             source $(brew --prefix nvm)/nvm.sh
+            alias npm-exec='PATH=$(npm bin):$PATH'
         fi
     fi
 fi
