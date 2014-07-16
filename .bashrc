@@ -12,7 +12,7 @@ function this_os_is(){
     fi
     return 1
 }
-export PATH=./vendor/bin:~/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export GREP_OPTIONS='--color=auto'
 
 # Vim
@@ -143,3 +143,6 @@ fi
 if type type direnv > /dev/null 2>&1 ; then
     eval "$(direnv hook $0)"
 fi
+
+# plenv
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
