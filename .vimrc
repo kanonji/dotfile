@@ -20,7 +20,7 @@ set scrolloff=5 "カーソルの上または下に表示する最小限の行数
 "  [ - [←]         挿入モード 置換モード
 "  ] - [→]          挿入モード 置換モード
 "  ~ - ~            ノーマルモード
-set whichwrap=b,s,<,>,[,],~
+" set whichwrap=b,s,<,>,[,],~
 set list
 set listchars=tab:▸\ ,trail:¬
 
