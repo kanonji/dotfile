@@ -22,6 +22,7 @@ if this_os_is mac; then
         alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
         alias vi='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
     fi
+    export EDITOR=vim
 fi
 
 if this_os_is mac; then
