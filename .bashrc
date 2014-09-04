@@ -109,7 +109,7 @@ fi
 
 # nvm
 if this_os_is mac; then
-    if type type brew > /dev/null 2>&1 ; then
+    if type brew > /dev/null 2>&1 ; then
         if [ -f $(brew --prefix nvm)/nvm.sh ]; then
             source $(brew --prefix nvm)/nvm.sh
             alias npm-exec='PATH=$(npm bin):$PATH'
@@ -141,9 +141,9 @@ if [ -s $HOME/.pythonz/etc/bashrc ]; then
 fi
 
 # direnv
-if type type direnv > /dev/null 2>&1 ; then
+if type direnv > /dev/null 2>&1 ; then
     eval "$(direnv hook $0)"
 fi
 
 # plenv
-if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
