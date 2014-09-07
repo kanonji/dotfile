@@ -20,6 +20,11 @@ S.bindAll({
   'm:ctrl,cmd': S.op('push', {direction: 'right', style: 'bar-resize:screenSizeX/3*2'}),
   'n:ctrl,cmd': S.op('push', {direction: 'left', style: 'bar-resize:screenSizeX/3'}),
 
+  'y:ctrl,cmd': S.op('corner', {direction: 'bottom-left', width: 'screenSizeX/3', height: 'screenSizeY/2'}),
+  'u:ctrl,cmd': S.op('corner', {direction: 'top-left', width: 'screenSizeX/3', height: 'screenSizeY/2'}),
+  'i:ctrl,cmd': S.op('corner', {direction: 'top-right', width: 'screenSizeX/3', height: 'screenSizeY/2'}),
+  'o:ctrl,cmd': S.op('corner', {direction: 'bottom-right', width: 'screenSizeX/3', height: 'screenSizeY/2'}),
+
   'g:ctrl,cmd': S.op('grid'),
 });
 
