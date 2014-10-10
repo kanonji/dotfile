@@ -12,6 +12,8 @@
 	lineNumber = true
 [push]
 	default = simple
+[diff]
+	renames = copies
 [include]
 	path = ~/.gitconfig_env
 
