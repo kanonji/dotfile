@@ -147,3 +147,6 @@ fi
 
 # plenv
 if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
+
+#aws-cli
+if type aws > /dev/null 2>&1 ; then complete -C aws_completer aws; fi
