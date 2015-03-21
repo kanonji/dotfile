@@ -127,7 +127,7 @@ fi
 # pythonz
 if [ -s $HOME/.pythonz/etc/bashrc ]; then
     source $HOME/.pythonz/etc/bashrc
-    if [ -s `which virtualenvwrapper.sh` ]; then
+    if [ -s `which virtualenvwrapper.sh` -a -z "${WORKON_HOME}" ]; then
         source `which virtualenvwrapper.sh`
         export WORKON_HOME=$HOME/.virtualenvs
         export PROJECT_HOME=$HOME/dev/virtualenv
