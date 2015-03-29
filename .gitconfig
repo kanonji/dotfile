@@ -14,7 +14,8 @@
 	default = simple
 [diff]
 	renames = copies
+[diff "xls"]
+	textconv = tika -t
 [include]
 	path = ~/.gitconfig_env
-
-# vim: set ts=4 sw=4 sts=0 noet ff=unix :
+# vim: set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab ff=unix :
