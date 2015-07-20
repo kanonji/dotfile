@@ -17,5 +17,6 @@
 [diff "xls"]
 	textconv = tika -t
 [include]
+	path = ~/.gitconfig_sourcetree
 	path = ~/.gitconfig_env
 # vim: set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab ff=unix :
