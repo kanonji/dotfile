@@ -153,7 +153,7 @@ if type aws > /dev/null 2>&1 ; then complete -C aws_completer aws; fi
 
 # git-new-workdir
 if this_os_is mac; then
-    if ! type git-new-workdir > /dev/null 2>&1 ; then
+    if [ ! -s ~/local/bin/git-new-workdir ]; then
         if [ -f $(brew --prefix git)/share/git-core/contrib/workdir/git-new-workdir ]; then
             ln -s $(brew --prefix git)/share/git-core/contrib/workdir/git-new-workdir ~/local/bin/git-new-workdir
         fi
