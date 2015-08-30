@@ -16,7 +16,9 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export GREP_OPTIONS='--color=auto'
 
 # Vim
-alias dvim='/usr/bin/vi'
+export LANG=ja_JP.UTF-8
+alias dvi=/usr/bin/vi
+alias vi=vim
 if this_os_is mac; then
     if [ -x '/Applications/MacVim.app/Contents/MacOS/Vim' ]; then
         alias vim='/Applications/MacVim.app/Contents/MacOS/Vim "$@"'
