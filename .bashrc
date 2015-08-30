@@ -6,6 +6,9 @@ function this_os_is(){
         darwin*)
             OS="mac"
             ;;
+        freebsd*)
+            OS="bsd"
+            ;;
     esac
     if [ "${OS}" = "$1" ]; then
         return 0
@@ -27,7 +30,7 @@ if this_os_is mac; then
     export EDITOR=vim
 fi
 
-if this_os_is mac; then
+if [ `this_os_is bsd` -o `this_os_is mac` ] ; then
     alias ls='ls -G'
 fi
 if this_os_is linux; then
