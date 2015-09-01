@@ -84,7 +84,7 @@ function switch_emo() {
     fi
     echo -e "${emo}"
 }
-function __git_status_k(){
+function __git_status_kanonji(){
     local g="$(__gitdir)";
     if [ -n "$g" ]; then
         local status=$(git status --porcelain 2>/dev/null)
@@ -99,7 +99,7 @@ function _prompt_command(){
     emo="$(switch_emo)"
     venv="$(switch_virtualenv)"
     if type __git_ps1 > /dev/null 2>&1; then
-        git_status_k="$(__git_status_k)"
+        git_status_k="$(__git_status_kanonji)"
         PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) ${git_status_k}\n${venv} ${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
     else
         PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
