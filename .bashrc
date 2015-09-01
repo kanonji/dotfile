@@ -108,6 +108,14 @@ function _prompt_command(){
         PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
     fi
 }
+# Ubuntuだと1回gitのsubcommandをTABで補完しないと__gitdirが定義されなかったので、ここで`_completion_loader git`して定義を試みる
+if this_os_is linux; then
+    if ! type __gitdir > /dev/null 2>&1; then
+        if type _completion_loader > /dev/null 2>&1; then
+            _completion_loader git
+        fi
+    fi
+fi
 PROMPT_COMMAND=_prompt_command
 
 # rbenv
