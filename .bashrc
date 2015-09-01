@@ -85,6 +85,9 @@ function switch_emo() {
     echo -e "${emo}"
 }
 function __git_status_kanonji(){
+    if ! type __gitdir > /dev/null 2>&1; then
+        return
+    fi
     local g="$(__gitdir)";
     if [ -n "$g" ]; then
         local status=$(git status --porcelain 2>/dev/null)
