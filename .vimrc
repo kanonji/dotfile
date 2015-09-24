@@ -69,6 +69,11 @@ if has('path_extra')
     set tags+=tags;~
 endif
 
+" タグジャンプをタブ・分割で開く
+nnoremap dt :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+nnoremap dv :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap dh :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+
 " バックスペースでインデントや改行を削除できるようにする
 " http://www15.ocn.ne.jp/~tusr/vim/vim_text2.html#mozTocId195366
 set backspace=indent,eol,start
