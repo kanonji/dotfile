@@ -135,8 +135,8 @@ fi
 
 # php-nabe
 if this_os_is mac; then
-    if [ -d $HOME/.php-nabe/php-nabe/bin ]; then
-        export PATH=$HOME/.php-nabe/php-nabe/bin:$PATH
+    if [ -d $HOME/.php-nabe/bin ]; then
+        export PATH=$HOME/.php-nabe/bin:$PATH
     fi
 fi
 
