@@ -1,0 +1,3 @@
+--langmap=PHP:.php.ctp
+--regex-php=/^[ \t]*trait[ \t]+([a-z0_9_]+)/\1/t,traits/i
+--php-kinds=c+i+f+t
