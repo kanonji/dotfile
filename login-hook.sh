@@ -1,7 +1,8 @@
 #!/bin/sh
+WORKING_DIR=$(cd $(dirname "${0}"); pwd)
 
-# ./login-hook.d/foo.sh
+# ${WORKING_DIR}/login-hook.d/foo.sh
 
-if [ -x './login-hook-env.sh' ]; then
-    ./login-hook-env.sh
+if [ -x "${WORKING_DIR}/login-hook-env.sh" ]; then
+    ${WORKING_DIR}/login-hook-env.sh
 fi
