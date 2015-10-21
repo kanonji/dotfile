@@ -238,3 +238,7 @@ if('' != glob('~/.vim/bundle/syntastic/'))
     let g:syntastic_style_warning_symbol = '⚠'
     let g:syntastic_scss_checkers = ['scss_lint']
 endif
+
+" user defined command
+command Pbcopy :let @*=@" " yank or deleted to clipboard
+command Pbcopy0 :let @*=@0 " yank to clipboard
