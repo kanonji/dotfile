@@ -28,6 +28,8 @@ set listchars=tab:▸\ ,trail:¬
 set smartindent "オートインデント
 "set clipboard=unnamed "yyの結果をクリップボードに。多分vimバイナリ次第で動かないかも
 noremap 0p "0p "コピーレジスタからペースト
+" カーソルで範囲選択した時、ビジュアルモードになるのを止める
+set mouse-=a
 
 " Tab
 set tabstop=4 "タブを表示する際の幅
