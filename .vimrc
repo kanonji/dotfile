@@ -65,6 +65,7 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 set directory=~/.vim/tmp "swpファイルの作成ディレクトリを指定
 set backupdir=~/.vim/tmp "~バックアップファイルの作成ディレクトリを指定
+set undodir=~/.vim/tmp " undoファイルの作成ディレクトリを指定 http://www.kaoriya.net/blog/2014/03/30/
 
 " tagfile
 if has('path_extra')
