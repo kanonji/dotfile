@@ -175,3 +175,8 @@ if this_os_is mac; then
         fi
     fi
 fi
+
+# webkit2png
+if type webkit2png > /dev/null 2>&1 ; then
+    alias webkit2png1280='webkit2png -C -s 1 --clipwidth=1280 --clipheight=720'
+fi
