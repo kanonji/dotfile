@@ -143,17 +143,17 @@ fi
 # pythonz
 if [ -s $HOME/.pythonz/etc/bashrc ]; then
     source $HOME/.pythonz/etc/bashrc
-    if [ -s `which virtualenvwrapper.sh` -a -z "${WORKON_HOME}" ]; then
-        source `which virtualenvwrapper.sh`
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PROJECT_HOME=$HOME/dev/virtualenv
-        eval "`pip completion --bash`"
-        # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
-        export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
-
-        workon default3
-        alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
-    fi
+    # if [ -s `which virtualenvwrapper.sh` -a -z "${WORKON_HOME}" ]; then
+    #     source `which virtualenvwrapper.sh`
+    #     export WORKON_HOME=$HOME/.virtualenvs
+    #     export PROJECT_HOME=$HOME/dev/virtualenv
+    #     eval "`pip completion --bash`"
+    #     # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
+    #     export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
+    #
+    #     workon default3
+    #     alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
+    # fi
 fi
 
 # direnv
