@@ -134,6 +134,9 @@ if this_os_is mac; then
     fi
 fi
 
+## yarn
+if [ -d $HOME/.yarn/bin ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
+
 # php-nabe
 if this_os_is mac; then
     if [ -d $HOME/.php-nabe/bin ]; then
