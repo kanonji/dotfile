@@ -15,7 +15,7 @@ function this_os_is(){
     fi
     return 1
 }
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export GREP_OPTIONS='--color=auto'
 
 # Vim
@@ -125,8 +125,8 @@ fi
 
 # nvm
 if this_os_is mac; then
-    if [ -d ~/.nvm ]; then
-        export NVM_DIR=~/.nvm
+    if [ -d $HOME/.nvm ]; then
+        export NVM_DIR=$HOME/.nvm
     fi
     if [ -s $NVM_DIR/nvm.sh ]; then
         source $NVM_DIR/nvm.sh
@@ -173,9 +173,9 @@ if type aws > /dev/null 2>&1 ; then complete -C aws_completer aws; fi
 
 # git-new-workdir
 if this_os_is mac; then
-    if [ ! -s ~/local/bin/git-new-workdir ]; then
+    if [ ! -s $HOME/local/bin/git-new-workdir ]; then
         if [ -f $(brew --prefix git)/share/git-core/contrib/workdir/git-new-workdir ]; then
-            ln -s $(brew --prefix git)/share/git-core/contrib/workdir/git-new-workdir ~/local/bin/git-new-workdir
+            ln -s $(brew --prefix git)/share/git-core/contrib/workdir/git-new-workdir $HOME/local/bin/git-new-workdir
         fi
     fi
 fi
