@@ -1,7 +1,10 @@
-# Copy this to %LOCALAPPDATA%\wsltty\home\%USERNAME%\.minttyrc
+#
+# Copy this file to %LOCALAPPDATA%\wsltty\home\%USERNAME%\.minttyrc
+#
 Locale=ja_JP
 Charset=UTF-8
 CopyOnSelect=no
+CtrlShiftShortcuts=yes
 RightClickAction=paste
 CursorType=block
 Printer=Adobe PDF
@@ -13,7 +16,7 @@ Columns=115
 Rows=70
 
 # https://github.com/oumu/mintty-color-schemes/blob/master/4bit-default.minttyrc
-# and modified
+# and I modified
 ForegroundColour=217,230,242
 BackgroundColour=13,25,38
 CursorColour=217,230,242
