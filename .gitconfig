@@ -8,7 +8,8 @@
 	grep = auto
 [core]
 	excludesfile = ~/.gitignore
-    editor = vim
+	editor = vim
+	quotepath = false
 [grep]
 	lineNumber = true
 [push]
