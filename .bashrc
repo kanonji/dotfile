@@ -56,6 +56,7 @@ if this_os_is mac; then
         . /usr/local/etc/bash_completion
     fi
 fi
+export FIGNORE=${FIGNORE}:.meta
 
 # PS1 with git
 if this_os_is mac; then
