@@ -119,9 +119,20 @@ if this_os_is linux; then
 fi
 PROMPT_COMMAND=_prompt_command
 
+# anyenv
+if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+fi
+
+if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
 # rbenv
-if type rbenv > /dev/null 2>&1 ; then
-    eval "$(rbenv init -)"
+  if type rbenv > /dev/null 2>&1 ; then
+      eval "$(rbenv init -)"
+  fi
+
+# plenv
+  if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
 fi
 
 # nvm
@@ -165,9 +176,6 @@ fi
 if type direnv > /dev/null 2>&1 ; then
     eval "$(direnv hook $0)"
 fi
-
-# plenv
-if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
 
 #aws-cli
 if type aws > /dev/null 2>&1 ; then complete -C aws_completer aws; fi
