@@ -53,15 +53,28 @@ augroup END
 
 highlight clear CursorLine
 highlight clear cursorcolumn
-" 何故かMacでctermbg=darkgrayが利かないので、反転で代用
-highlight CursorLine term=reverse cterm=reverse ctermbg=NONE gui=underline guibg=NONE
-highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE guibg=black
+highlight CursorLine term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
+highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
+autocmd InsertEnter * highlight CursorLine term=none cterm=none ctermfg=NONE ctermbg=Black
+autocmd InsertEnter * highlight cursorColumn term=none cterm=none ctermfg=NONE ctermbg=Black
+autocmd InsertLeave * highlight CursorLine term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
+autocmd InsertLeave * highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
+
 highlight SpecialKey term=underline ctermfg=darkgray guifg=darkgray
 highlight NonText term=underline ctermfg=darkgray guifg=darkgray
+
+" Bash on Ubuntu on Windowsであればmintty/wslttyとする
+if readfile('/proc/version_signature', 'b', 1)[0] =~ 'Microsoft'
+  let &t_ti .= "\e[1 q"  " 端末を termcap モードにする
+  let &t_SI .= "\e[5 q"  " 挿入モード開始(バー型のカーソル)
+  let &t_EI .= "\e[1 q"  " 挿入モード終了(ブロック型カーソル)
+  let &t_te .= "\e[0 q"  " termcap モードから抜ける
+endif
 
 "Escの2回押しでハイライト消去
 set hlsearch
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
 
 set directory=~/.vim/tmp "swpファイルの作成ディレクトリを指定
 set backupdir=~/.vim/tmp "~バックアップファイルの作成ディレクトリを指定
