@@ -149,7 +149,10 @@ if('' != glob('~/.vim/bundle/neocomplcache/'))
     inoremap <expr><TAB>   pumvisible() ? "\<C-n>" : "\<TAB>"
     " Shift tabで前の候補
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-    highlight Pmenu ctermbg=Black
+    highlight Pmenu ctermbg=Black ctermfg=Gray
+    highlight PmenuSel cterm=bold ctermbg=Red ctermfg=Black
+    highlight PmenuSbar ctermbg=Black ctermfg=Gray
+    " highlight PmenuThumb ctermbg=Gray
 endif
 
 " quickrun
