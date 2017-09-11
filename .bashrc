@@ -221,3 +221,6 @@ if type complete &>/dev/null; then
   complete -o default -F _yo_completion yo
 fi
 ###-end-yo-completion-###
+
+# added by travis gem
+[ -f /Users/kanonji/.travis/travis.sh ] && source /Users/kanonji/.travis/travis.sh
