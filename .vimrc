@@ -64,7 +64,7 @@ highlight SpecialKey term=underline ctermfg=darkgray guifg=darkgray
 highlight NonText term=underline ctermfg=darkgray guifg=darkgray
 
 " Bash on Ubuntu on Windowsであればmintty/wslttyとする
-if readfile('/proc/version_signature', 'b', 1)[0] =~ 'Microsoft'
+if filereadable('/proc/version_signature') && readfile('/proc/version_signature', 'b', 1)[0] =~ 'Microsoft'
   let &t_ti .= "\e[1 q"  " 端末を termcap モードにする
   let &t_SI .= "\e[5 q"  " 挿入モード開始(バー型のカーソル)
   let &t_EI .= "\e[1 q"  " 挿入モード終了(ブロック型カーソル)
