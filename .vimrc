@@ -255,6 +255,32 @@ if('' != glob('~/.vim/bundle/syntastic/'))
     let g:syntastic_scss_checkers = ['scss_lint']
 endif
 
+" ack.vim
+if('' != glob('~/.vim/bundle/ack.vim/'))
+    if executable('rg')
+        let g:ackprg = 'rg --vimgrep --no-heading'
+    elseif executable('ag')
+        let g:ackprg = 'ag --vimgrep'
+    endif
+endif
+
+" ctrlp
+if('' != glob('~/.vim/bundle/ctrlp.vim/'))
+    let g:ctrlp_working_path_mode = 'ra'
+    let g:ctrlp_switch_buffer = 'et'
+    if executable('rg')
+        let g:ctrlp_user_command = 'rg --files %s'
+        let g:ctrlp_use_caching = 0
+    elseif executable('ag')
+        let g:ctrlp_user_command = 'ag %s -l --nocolor --noheading -g ""'
+        let g:ctrlp_use_caching = 0
+    endif
+    let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn|vscode)$',
+      \ 'file': '\v\.(exe|so|dll)$',
+      \ }
+endif
+
 " user defined command
 command Pbcopy :let @*=@" " yank or deleted to clipboard
 command Pbcopy0 :let @*=@0 " yank to clipboard
