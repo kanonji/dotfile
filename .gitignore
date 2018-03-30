@@ -17,3 +17,6 @@ Thumbs.db
 
 login-hook-env.sh
 login-hook-root-env.sh
+
+#Vim
+Session.vim
