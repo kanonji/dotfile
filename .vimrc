@@ -53,12 +53,12 @@ augroup END
 
 highlight clear CursorLine
 highlight clear cursorcolumn
-highlight CursorLine term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
-highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
-autocmd InsertEnter * highlight CursorLine term=none cterm=none ctermfg=NONE ctermbg=Black
-autocmd InsertEnter * highlight cursorColumn term=none cterm=none ctermfg=NONE ctermbg=Black
-autocmd InsertLeave * highlight CursorLine term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
-autocmd InsertLeave * highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE ctermfg=Gray
+highlight CursorLine term=reverse cterm=reverse ctermbg=NONE
+highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE
+autocmd InsertEnter * highlight CursorLine term=none cterm=none ctermfg=NONE ctermbg=None
+autocmd InsertEnter * highlight cursorColumn term=none cterm=none ctermfg=NONE ctermbg=None
+autocmd InsertLeave * highlight CursorLine term=reverse cterm=reverse ctermbg=NONE
+autocmd InsertLeave * highlight cursorColumn term=reverse cterm=reverse ctermbg=NONE
 
 highlight SpecialKey term=underline ctermfg=darkgray guifg=darkgray
 highlight NonText term=underline ctermfg=darkgray guifg=darkgray
