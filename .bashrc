@@ -128,6 +128,9 @@ PROMPT_COMMAND=_prompt_command
 if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
+
+  # goenv
+  if type goenv > /dev/null 2>&1 ; then export PATH="$(go env GOPATH)/bin:$PATH"; fi
 fi
 
 if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
