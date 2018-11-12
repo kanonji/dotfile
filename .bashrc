@@ -133,52 +133,8 @@ if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
   if type goenv > /dev/null 2>&1 ; then export PATH="$(go env GOPATH)/bin:$PATH"; fi
 fi
 
-if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
-# rbenv
-  if type rbenv > /dev/null 2>&1 ; then
-      eval "$(rbenv init -)"
-  fi
-
-# plenv
-  if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
-fi
-
-# nvm
-if this_os_is mac; then
-    if [ -d $HOME/.nvm ]; then
-        export NVM_DIR=$HOME/.nvm
-    fi
-    if [ -s $NVM_DIR/nvm.sh ]; then
-        source $NVM_DIR/nvm.sh
-        alias npm-exec='PATH=$(npm bin):$PATH'
-    fi
-fi
-
 ## yarn
 if [ -d $HOME/.yarn/bin ]; then export PATH="$HOME/.yarn/bin:$PATH"; fi
-
-# php-nabe
-if this_os_is mac; then
-    if [ -d $HOME/.php-nabe/bin ]; then
-        export PATH=$HOME/.php-nabe/bin:$PATH
-    fi
-fi
-
-# pythonz
-if [ -s $HOME/.pythonz/etc/bashrc ]; then
-    source $HOME/.pythonz/etc/bashrc
-    # if [ -s `which virtualenvwrapper.sh` -a -z "${WORKON_HOME}" ]; then
-    #     source `which virtualenvwrapper.sh`
-    #     export WORKON_HOME=$HOME/.virtualenvs
-    #     export PROJECT_HOME=$HOME/dev/virtualenv
-    #     eval "`pip completion --bash`"
-    #     # export PIP_RESPECT_VIRTUALENV=true # globalに入れたpipでもvirtualenv環境で実行すればvirtualenv環境にインストールする。
-    #     export PIP_REQUIRE_VIRTUALENV=true   # pipの実行はvirtualenv環境のみとする。Alternative to PIP_RESPECT_VIRTUALENV
-    #
-    #     workon default3
-    #     alias mkvirtualenv="mkvirtualenv --python=\$(which python)"
-    # fi
-fi
 
 # direnv
 if type direnv > /dev/null 2>&1 ; then
@@ -227,3 +183,26 @@ fi
 
 # added by travis gem
 [ -f /Users/kanonji/.travis/travis.sh ] && source /Users/kanonji/.travis/travis.sh
+
+# Deprecated
+
+# nvm
+if this_os_is mac; then
+    if [ -d $HOME/.nvm ]; then
+        export NVM_DIR=$HOME/.nvm
+    fi
+    if [ -s $NVM_DIR/nvm.sh ]; then
+        source $NVM_DIR/nvm.sh
+        alias npm-exec='PATH=$(npm bin):$PATH'
+    fi
+fi
+
+if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
+# rbenv
+  if type rbenv > /dev/null 2>&1 ; then
+      eval "$(rbenv init -)"
+  fi
+
+# plenv
+  if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
+fi
