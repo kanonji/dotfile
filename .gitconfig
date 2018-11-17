@@ -18,6 +18,8 @@
 	renames = copies
 [diff "xls"]
 	textconv = tika -t
+[show "xls"]
+	textconv = tika -t
 [include]
 	path = ~/.gitconfig_sourcetree
 	path = ~/.gitconfig_env
