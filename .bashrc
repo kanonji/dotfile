@@ -15,6 +15,13 @@ function this_os_is(){
     fi
     return 1
 }
+function this_is_wsl(){
+    if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+        return 0
+    fi
+    return 1
+}
+
 export PATH=$HOME/local/bin:$HOME/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
