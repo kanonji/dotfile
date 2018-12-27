@@ -165,6 +165,17 @@ if type webkit2png > /dev/null 2>&1 ; then
     alias webkit2png1280='webkit2png -C -s 1 --clipwidth=1280 --clipheight=720'
 fi
 
+# Docker
+if this_is_wsl; then
+    if type docker-machine.exe > /dev/null 2>&1; then
+        eval $(docker-machine.exe env --shell=bash)
+    fi
+    export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/certs # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
+else
+    if type docker-machine > /dev/null 2>&1; then
+        eval $(docker-machine env --shell=bash)
+    fi
+fi
 
 # Deprecated
 
