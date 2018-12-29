@@ -166,15 +166,13 @@ if type webkit2png > /dev/null 2>&1 ; then
 fi
 
 # Docker
-if this_is_wsl; then
+if type docker-machine > /dev/null 2>&1; then
+      eval $(docker-machine env --shell=bash)
+elif this_is_wsl; then
     if type docker-machine.exe > /dev/null 2>&1; then
         eval $(docker-machine.exe env --shell=bash)
     fi
-    export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/certs # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
-else
-    if type docker-machine > /dev/null 2>&1; then
-        eval $(docker-machine env --shell=bash)
-    fi
+    export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/machines/default # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
 fi
 
 # Deprecated
