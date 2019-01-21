@@ -3,7 +3,8 @@
     email = myuser@localhost
 [color]
     status = auto
-    diff = auto
+    diff = always
+    diff-highlight = always
     branch = auto
     grep = auto
 [core]
