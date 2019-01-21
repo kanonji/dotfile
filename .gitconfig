@@ -1,28 +1,28 @@
 [user]
-	name = myuser
-	email = myuser@localhost
+    name = myuser
+    email = myuser@localhost
 [color]
-	status = auto
-	diff = auto
-	branch = auto
-	grep = auto
+    status = auto
+    diff = auto
+    branch = auto
+    grep = auto
 [core]
-	excludesfile = ~/.gitignore
-	editor = vim
-	quotepath = false
+    excludesfile = ~/.gitignore
+    editor = vim
+    quotepath = false
 [grep]
-	lineNumber = true
+    lineNumber = true
 [push]
-	default = simple
+    default = simple
 [diff]
-	renames = copies
+    renames = copies
 [diff "xls"]
-	textconv = tika -t
+    textconv = tika -t
 [show "xls"]
-	textconv = tika -t
+    textconv = tika -t
 [include]
-	path = ~/.gitconfig_sourcetree
-	path = ~/.gitconfig_env
+    path = ~/.gitconfig_sourcetree
+    path = ~/.gitconfig_env
 # vim: set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab ff=unix :
 [log]
-	date = iso
+    date = iso
