@@ -10,6 +10,8 @@ CursorType=block
 Printer=Adobe PDF
 BoldAsFont=yes
 FontSmoothing=full
+Font=Consolas
+FontHeight=9
 
 Transparency=15
 Columns=115
