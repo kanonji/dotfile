@@ -22,6 +22,10 @@ function this_is_wsl(){
     return 1
 }
 
+if this_is_wsl; then
+  umask 022
+fi
+
 export PATH=$HOME/local/bin:$HOME/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
