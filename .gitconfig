@@ -1,3 +1,4 @@
+# vim: set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab ff=unix :
 [user]
     name = myuser
     email = myuser@localhost
@@ -24,6 +25,5 @@
 [include]
     path = ~/.gitconfig_sourcetree
     path = ~/.gitconfig_env
-# vim: set tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab ff=unix :
 [log]
     date = iso
