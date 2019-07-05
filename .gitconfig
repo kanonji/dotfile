@@ -12,6 +12,7 @@
     excludesfile = ~/.gitignore
     editor = vim
     quotepath = false
+    autocrlf = false
 [grep]
     lineNumber = true
 [push]
