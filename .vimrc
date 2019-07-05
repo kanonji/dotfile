@@ -1,5 +1,6 @@
 " vim:set ts=4 sts=4 sw=4 tw=0 et
-
+set encoding=utf-8
+scriptencoding utf-8
 set helplang=ja "helpを日本語優先にする
 
 " UI
