@@ -135,6 +135,13 @@ if this_os_is linux; then
 fi
 PROMPT_COMMAND=_prompt_command
 
+# Linuxbrew
+if type brew > /dev/null 2>&1 ; then
+    if brew --prefix | grep "linuxbrew" > /dev/null 2>&1; then
+        eval $(brew shellenv)
+    fi
+fi
+
 # anyenv
 if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
