@@ -170,6 +170,14 @@ if this_os_is mac; then
         fi
     fi
 fi
+if this_is_wsl; then
+    if [ ! -s $HOME/local/bin/git-new-workdir ]; then
+        if [ -f /usr/share/doc/git/contrib/workdir/git-new-workdir ]; then
+            ln -s /usr/share/doc/git/contrib/workdir/git-new-workdir $HOME/local/bin/git-new-workdir
+        fi
+    fi
+
+fi
 
 # webkit2png
 if type webkit2png > /dev/null 2>&1 ; then
