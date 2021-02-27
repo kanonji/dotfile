@@ -1,3 +1,4 @@
+# $ if this_os_is mac; then echo "yes"; fi
 function this_os_is(){
     case "${OSTYPE}" in
         linux*)
@@ -15,13 +16,40 @@ function this_os_is(){
     fi
     return 1
 }
+
+# https://github.com/microsoft/WSL/issues/4555#issuecomment-711091232
+export WSL=no WSLVER=""
+if [[ "$(< /proc/version)" = *[Mm]icrosoft* ]]; then
+  WSL=yes
+  if [[ -e "/proc/config.gz" ]]; then WSLVER+="2"; else WSLVER+="1"; fi
+  if [[ -e "/dev/vsock" ]];      then WSLVER+="2"; else WSLVER+="1"; fi
+  if [[ -n "$WSL_INTEROP" ]];    then WSLVER+="2"; else WSLVER+="1"; fi
+  if [[ -d "/run/WSL" ]];        then WSLVER+="2"; else WSLVER+="1"; fi
+  if [[ -n "${WSLVER//1/}" && -n "${WSLVER//2/}" ]]; then
+    echo "WSL version detection got multiple answers ($WSLVER), time to update this code!"
+  fi
+  WSLVER="${WSLVER:0:1}"
+fi
+
+# $ if this_is_wsl; then echo "yes"; fi
 function this_is_wsl(){
     if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
         return 0
     fi
     return 1
 }
-
+function this_is_wsl1(){
+  if this_is_wsl && (($WSLVER==1)); then
+    return 0
+  fi
+  return 1
+}
+function this_is_wsl2(){
+  if this_is_wsl && (($WSLVER==2)); then
+    return 0
+  fi
+  return 1
+}
 if this_is_wsl; then
   umask 022
 fi
@@ -47,10 +75,16 @@ if this_os_is mac; then
 fi
 
 if [ `this_os_is bsd` -o `this_os_is mac` ] ; then
-    alias ls='ls -G'
+  echo "alias ls='ls -G'"
+  alias ls='ls -G'
 fi
 if this_os_is linux; then
-    alias ls='ls --color --show-control-chars'
+  echo "alias ls='ls --color --show-control-chars'"
+  alias ls='ls --color --show-control-chars'
+fi
+if this_is_wsl2; then
+  echo "alias git='git.exe'"
+  alias git='git.exe'
 fi
 
 # logout with ^D^D^D
@@ -185,15 +219,11 @@ if type webkit2png > /dev/null 2>&1 ; then
 fi
 
 # Docker
-if this_is_wsl; then
-    if type docker-machine.exe > /dev/null 2>&1; then
-        eval $(docker-machine.exe env --shell=bash)
-    fi
-    export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/machines/default # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
-# else
-    # if type docker-machine > /dev/null 2>&1; then
-    #     eval $(docker-machine env --shell=bash)
-    # fi
+if this_is_wsl1; then
+  if type docker-machine.exe > /dev/null 2>&1; then
+     eval $(docker-machine.exe env --shell=bash)
+  fi
+  export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/machines/default # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
 fi
 
 # Deprecated
