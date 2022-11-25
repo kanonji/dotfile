@@ -226,6 +226,17 @@ if this_is_wsl1; then
   export DOCKER_CERT_PATH=${USERPROFILE}/.docker/machine/machines/default # `set WSLENV=USERPROFILE/up` on Windows env variable setting.
 fi
 
+# Golang
+if type go > /dev/null 2>&1; then
+  if [ -n "$(go env GOBIN)" ]; then
+    echo "Golang: export PATH=\$(go env GOBIN):\$PATH"
+    export PATH=$(go env GOBIN):$PATH
+  else
+    echo "Golang: export PATH=\$(go env GOPATH)/bin:\$PATH"
+    export PATH=$(go env GOPATH)/bin:$PATH
+  fi
+fi
+
 # Deprecated
 
 # nvm
