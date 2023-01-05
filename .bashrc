@@ -170,10 +170,10 @@ fi
 PROMPT_COMMAND=_prompt_command
 
 # Linuxbrew
-if type brew > /dev/null 2>&1 ; then
-    if brew --prefix | grep "linuxbrew" > /dev/null 2>&1; then
-        eval $(brew shellenv)
-    fi
+if type /home/linuxbrew/.linuxbrew/bin/brew > /dev/null 2>&1; then
+  echo "linuxbrew:"
+  echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 # anyenv
