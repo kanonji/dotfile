@@ -83,8 +83,8 @@ if this_os_is linux; then
   alias ls='ls --color --show-control-chars'
 fi
 if this_is_wsl2; then
-  echo "alias git='git.exe'"
-  alias git='git.exe'
+  echo "alias wgit='git.exe'"
+  alias wgit='git.exe'
 fi
 
 # logout with ^D^D^D
