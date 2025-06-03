@@ -13,6 +13,7 @@
     editor = vim
     quotepath = false
     autocrlf = false
+    pager = less -x1,5,9,13,17
 [grep]
     lineNumber = true
 [push]
@@ -28,3 +29,7 @@
     path = ~/.gitconfig_env
 [log]
     date = iso
+[init]
+	defaultBranch = master
+[credential]
+	helper = cache
