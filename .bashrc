@@ -131,7 +131,7 @@ function switch_emo() {
     if [ $? -eq 0 ]; then
         emo="\[\033[00;31m\]('w')b\[\033[00m\] "
     else
-        emo="\[\033[01;30;41m\]('m')q[\033[00m\] "
+        emo="\[\033[01;30;41m\]('m')q\[\033[00m\] "
     fi
     echo -e "${emo}"
 }
