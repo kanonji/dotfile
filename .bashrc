@@ -154,9 +154,9 @@ function _prompt_command(){
     venv="$(switch_virtualenv)"
     if type __git_ps1 > /dev/null 2>&1; then
         git_status_k="$(__git_status_kanonji)"
-        PS1="\[\033[01;32m\]\u@\h\[\033[01;33m\] \w\$(__git_ps1) ${git_status_k}\n${venv} ${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
+        PS1="\[\033[01;32m\]\u@\h ${WSL_DISTRO_NAME}\[\033[01;33m\] \w\$(__git_ps1) ${git_status_k}\n${venv} ${emo}\j \[\033[01;34m\]\$\[\033[00m\] "
     else
-        PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
+        PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h ${WSL_DISTRO_NAME} \[\e[33m\]\w\[\e[0m\]\n${emo}\j \$ "
     fi
 }
 # Ubuntuだと1回gitのsubcommandをTABで補完しないと__gitdirが定義されなかったので、ここで`_completion_loader git`して定義を試みる
