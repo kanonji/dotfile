@@ -236,6 +236,11 @@ if type go > /dev/null 2>&1; then
   fi
 fi
 
+# kubectl
+if type kubectl > /dev/null 2>&1; then
+  source <(kubectl completion bash)
+fi
+
 # Deprecated
 
 # nvm
