@@ -199,7 +199,7 @@ if type direnv > /dev/null 2>&1 ; then
 fi
 
 #aws-cli
-if type aws > /dev/null 2>&1 ; then complete -C aws_completer aws; fi
+command -v aws > /dev/null 2>&1 && complete -C aws_completer aws && echo 'aws: complete -C aws_completer aws'
 
 # git-new-workdir
 if this_os_is mac; then
@@ -243,8 +243,6 @@ if type go > /dev/null 2>&1; then
 fi
 
 # kubectl
-if type kubectl > /dev/null 2>&1; then
-  source <(kubectl completion bash)
-fi
+command -v kubectl > /dev/null 2>&1 && source <(kubectl completion bash) && echo 'kubectl: source <(kubectl completion bash)'
 
 alias clearbuffer='clear && printf "\e[3J"'
