@@ -182,7 +182,7 @@ fi
 # mise
 command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)" && echo 'mise: eval "$(mise activate bash)"'
 
-# anyenv
+# anyenv // Deprecated
 if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
   echo "anyenv:"
   echo 'eval "$(anyenv init -)"'
