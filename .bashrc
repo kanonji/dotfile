@@ -247,27 +247,4 @@ if type kubectl > /dev/null 2>&1; then
   source <(kubectl completion bash)
 fi
 
-# Deprecated
-
-# nvm
-if this_os_is mac; then
-    if [ -d $HOME/.nvm ]; then
-        export NVM_DIR=$HOME/.nvm
-    fi
-    if [ -s $NVM_DIR/nvm.sh ]; then
-        source $NVM_DIR/nvm.sh
-        alias npm-exec='PATH=$(npm bin):$PATH'
-    fi
-fi
-
-if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
-# rbenv
-  if type rbenv > /dev/null 2>&1 ; then
-      eval "$(rbenv init -)"
-  fi
-
-# plenv
-  if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
-fi
-
 alias clearbuffer='clear && printf "\e[3J"'
