@@ -95,18 +95,21 @@ export HISTSIZE=5000
 export HISTFILESIZE=5000
 export HISTIGNORE=ls:pwd
 
-# bash-completion
-if this_os_is mac; then
-    ## MacPorts
-    if [ -f /opt/local/etc/bash_completion ]; then
-        . /opt/local/etc/bash_completion
-    fi
-    ## homebrew
-    if [ -f /usr/local/etc/bash_completion ]; then
-        . /usr/local/etc/bash_completion
-    fi
-fi
+# ignore *.meta for tab completion
 export FIGNORE=${FIGNORE}:.meta
+
+# bash-completion
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
 
 # PS1 with git
 if this_os_is mac; then
