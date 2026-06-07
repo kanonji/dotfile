@@ -179,6 +179,9 @@ if type /home/linuxbrew/.linuxbrew/bin/brew > /dev/null 2>&1; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# mise
+command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)" && echo 'mise: eval "$(mise activate bash)"'
+
 # anyenv
 if type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
   echo "anyenv:"
