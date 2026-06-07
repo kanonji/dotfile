@@ -263,3 +263,5 @@ if ! type $HOME/.anyenv/bin/anyenv > /dev/null 2>&1 ; then
 # plenv
   if type plenv > /dev/null 2>&1 ; then eval "$(plenv init -)"; fi
 fi
+
+alias clearbuffer='clear && printf "\e[3J"'
