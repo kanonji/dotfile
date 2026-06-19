@@ -90,11 +90,6 @@ fi
 # logout with ^D^D^D
 export IGNOREEOF=3
 
-# history
-export HISTSIZE=5000
-export HISTFILESIZE=5000
-export HISTIGNORE=ls:pwd
-
 # ignore *.meta for tab completion
 export FIGNORE=${FIGNORE}:.meta
 
@@ -171,6 +166,13 @@ if this_os_is linux; then
     fi
 fi
 PROMPT_COMMAND=_prompt_command
+
+# history
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTIGNORE=ls:pwd
+shopt -s histappend
+PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
 
 # Linuxbrew
 if type /home/linuxbrew/.linuxbrew/bin/brew > /dev/null 2>&1; then
