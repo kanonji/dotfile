@@ -62,6 +62,9 @@ alias zgrep='zgrep --color=auto'
 alias zegrep='zegrep --color=auto'
 alias zfgrep='zfgrep --color=auto'
 
+# apt
+alias apt-manual-upgradable='comm -12 <(apt list --upgradable 2>/dev/null | cut -d/ -f1 | sort) <(apt-mark showmanual | sort)'
+
 # Vim
 export LANG=ja_JP.UTF-8
 alias dvi=/usr/bin/vi
